@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button class="click1">Click me!</button>
+    <button href="34567" huong="323">Click me!</button>
+    <button>Click me!</button>
+    <!-- <p class="text" >demo class</p>
+    <p id="textID" >demo ID</p> -->
+
+    <p>demo class</p>
+    <p>demo ID</p>
+    <ul>
+        <li><a href="https://www.w3schools.com/jquery/jquery_selectors1.asp">PHP</a></li>
+        <li><a>HTML</a></li>
+        <li><a href="https://www.w3schools.com/jquery/jquery_selectors2.asp">CSS</a></li>
+        <li><a href="https://www.w3schools.com/jquery/jquery_selectors3.asp">Jquery</a></li>
+    </ul>
+
+
+
+
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // var a = $("[huong]").text();
+            // console.log(a);
+
+            // var  t = $("[huong]").attr('huong');
+            // console.log(t)
+
+            var href = $('[href]');
+            console.log(href)
+            var soPhantu = href.length;
+            for(var i=0; i<soPhantu; i++){
+                console.log($(href[i]).attr('href'))
+            }
+        })
+
+        // $(document).ready(function(){
+        //     $('button').click(function(){
+        //         alert('Chào bạn')
+        //     })
+
+        //     $('button.click1').click(function(){
+        //         alert('bạn vùa click vào button có class là click1')
+        //     })
+
+        //     $('.text').click(function (){
+        //         console.log("bạn vừa click vào thẻ p có class là text");
+        //         var  t = $('.text').text();
+        //         console.log(t)
+        //     })
+
+        //     $('#textID').click(function (){
+        //         console.log("bạn vừa click vào thẻ p có id là textID");
+        //     })
+
+        //     $('p:first').click(function(){
+        //         alert('Chào bạn')
+        //     })
+
+        //     $('li:first').click(function(){
+        //         //alert('Bạn vừa click vào thẻ li đầu tiên')
+        //         alert($(this).text())
+        //     })
+        // })
+
+    </script>
+</body>
+</html>
