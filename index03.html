@@ -29,9 +29,13 @@
         content: ". End";
         color: red
     }
-    .div4{
+    #div4{
         color: #fff;
-        font-size: 40px
+        font-size: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet ;
+        position: relative;
     }
 </style>
 
@@ -51,58 +55,77 @@
     </div>
 
     <p>This is a paragraph</p> -->
-
-    <div class="div4">
-        4
-    </div>
     <div class="btn2">
         <button type="button">Click me!</button>
     </div>
+    <div id="div4">
+        4
+    </div>
+   
 
     <script src="jquery-3.2.1.min.js"></script>
     <script>
 
+    function goToTop(){
+        //$(this).text('Done!')
+        $('#div4').animate({
+            "left":"0px",
+            "opacity":"1",
+            'top':"0px"
+        },2000)
+    }
+    function goToLeft(){
+        //$(this).text('Done!')
+        $('#div4').animate({
+            "left":"0px",
+            "opacity":"0.75",
+            'top':"100px"
+        },2000,goToTop)
+    }
+    
     function goBottom(){
         //$(this).text('Done!')
-        $('.div4').animate({
+        $('#div4').animate({
             "left":"200px",
             "opacity":"0.5",
-            'top':"320px"
-        })
+            'top':"100px"
+        },2000,goToLeft)
     }
 
         $(document).ready(function(){
-            // $('.div4').animate({
-            //     "left":"200px",
-            //     "opacity":"0.5"
-            // },2000)
-
             $('.btn2').click(function(){
-                $('.div4').animate({
+                $('#div4').animate({
                     "left":"200px",
-                    "opacity":"0.5"
-                },2000,function(){
-                    $('.div4').animate({
-                        "left":"200px",
-                        "opacity":"0.5",
-                        'top':"320px"
-                    },2000,function(){
-                        $('.div4').animate({
-                            "left":"0px",
-                            "opacity":"0.5",
-                            'top':"320px"
-                        },2000,function(){
-                            $('.div4').animate({
-                            "left":"0px",
-                            "opacity":"0.5",
-                            'top':"0px"
-                            },2000, function (){
-                                $(this).text('Done!')
-                            })
-                        })
-                    })
-                })
+                    "opacity":"0.25"
+                },2000,goBottom)
             })
+
+            // $('.btn2').click(function(){
+            //     $('#div4').animate({
+            //         "left":"200px",
+            //         "opacity":"0.5"
+            //     },2000,function(){
+            //         $('#div4').animate({
+            //             "left":"200px",
+            //             "opacity":"0.5",
+            //             'top':"320px"
+            //         },2000,function(){
+            //             $('#div4').animate({
+            //                 "left":"0px",
+            //                 "opacity":"0.5",
+            //                 'top':"320px"
+            //             },2000,function(){
+            //                 $('#div4').animate({
+            //                 "left":"0px",
+            //                 "opacity":"0.5",
+            //                 'top':"0px"
+            //                 },2000, function (){
+            //                     $(this).text('Done!')
+            //                 })
+            //             })
+            //         })
+            //     })
+            // })
 
 
 
