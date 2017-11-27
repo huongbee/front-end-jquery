@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <script>
+        $.get("test.txt",function(data){
+           // console.log(data)
+
+            data =$.parseJSON(data)
+
+          //  console.log(data)
+
+            $('h2').text(data.text1)
+            $('h3').text(data.text2)
+            $('h4').text(data.text3)
+        })
+        
+
+        $.post("test.txt",function(data){
+        //    // console.log(data)
+        //     data =$.parseJSON(data)
+        //   //  console.log(data)
+
+        //     $('h2').text(data.text1)
+        //     $('h3').text(data.text2)
+        //     $('h4').text(data.text3)
+        })
+
+        $.ajax({
+            'url':"test.txt",
+            'method':"GET",
+            "dataType":"json",
+            success:function(data){
+                //data =$.parseJSON(data)
+                console.log(data)
+            }
+        }).done(function(){
+            alert("Done!")
+        })
+    </script>
+</body>
+</html>
